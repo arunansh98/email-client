@@ -71,11 +71,17 @@ export default function App() {
             if (index < mails.length - 1) {
               mailsClass = mailsClass + " border-solid border-b-[1px]";
             }
+            if (!mail.isRead) {
+              mailsClass = mailsClass + " font-bold";
+            }
             return (
               <h1
                 className={mailsClass}
                 key={index}
-                onClick={() => setActiveMailBodyIndex(index)}
+                onClick={() => {
+                  mail.isRead = true;
+                  setActiveMailBodyIndex(index);
+                }}
               >
                 {mail.title}
               </h1>
