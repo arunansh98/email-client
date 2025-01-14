@@ -1,6 +1,6 @@
 import axios from "axios";
 import { useEffect, useReducer, useState } from "react";
-import MailTypes from "./components/views/MailTypes";
+import MailTypes from "./components/views/MailTypes/MailTypes";
 import Mails from "./components/views/Mails";
 import MailBody from "./components/views/MailBody";
 
