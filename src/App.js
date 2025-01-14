@@ -22,15 +22,17 @@ export default function App() {
   const [state, dispatch] = useReducer(reducerFunction, {});
 
   useEffect(() => {
-    axios.get("/assets/data/db.json").then((response) => {
-      console.log({ response });
-      dispatch({
-        type: "replace",
-        payload: {
-          value: response.data,
-        },
+    axios
+      .get(`${process.env.PUBLIC_URL}/assets/data/db.json`)
+      .then((response) => {
+        console.log({ response });
+        dispatch({
+          type: "replace",
+          payload: {
+            value: response.data,
+          },
+        });
       });
-    });
   }, []);
 
   if (Object.keys(state).length === 0) {
