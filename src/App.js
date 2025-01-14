@@ -1,5 +1,8 @@
 import axios from "axios";
 import { useEffect, useReducer, useState } from "react";
+import MailTypes from "./components/views/MailTypes";
+import Mails from "./components/views/Mails";
+import MailBody from "./components/views/MailBody";
 
 export default function App() {
   const [activeMailTypeIndex, setActiveMailTypeIndex] = useState(0);
@@ -38,60 +41,16 @@ export default function App() {
 
   const { mails } = mailTypes?.[activeMailTypeIndex];
 
-  console.log({ mails });
-
   const activeMailBody = mails?.[activeMailBodyIndex];
 
   return (
-    <div className="flex flex-row items-stretch h-[86vh] justify-between border-[2px] border-solid m-[3rem]">
-      <div className="flex flex-col items-center justify-start border-solid border-r-[1px] h-full w-full overflow-y-scroll">
-        {mailTypes &&
-          mailTypes?.length > 0 &&
-          mailTypes.map((type, index) => {
-            let mailTypesClass = "cursor-pointer w-full text-center p-[1rem]";
-            if (index < mailTypes.length - 1) {
-              mailTypesClass = mailTypesClass + " border-solid border-b-[1px]";
-            }
-            return (
-              <h1
-                className={mailTypesClass}
-                key={index}
-                onClick={() => setActiveMailTypeIndex(index)}
-              >
-                {type.label}
-              </h1>
-            );
-          })}
-      </div>
-      <div className="flex flex-col items-center justify-start border-solid border-r-[1px] h-full w-full overflow-y-scroll">
-        {mails &&
-          mails?.length > 0 &&
-          mails.map((mail, index) => {
-            let mailsClass = "cursor-pointer w-full text-center p-[1rem]";
-            if (index < mails.length - 1) {
-              mailsClass = mailsClass + " border-solid border-b-[1px]";
-            }
-            if (!mail.isRead) {
-              mailsClass = mailsClass + " font-bold";
-            }
-            return (
-              <h1
-                className={mailsClass}
-                key={index}
-                onClick={() => {
-                  mail.isRead = true;
-                  setActiveMailBodyIndex(index);
-                }}
-              >
-                {mail.title}
-              </h1>
-            );
-          })}
-        {(!mails || mails?.length === 0) && "No mails found !"}
-      </div>
-      <div className="flex flex-col items-center justify-center h-full w-full overflow-y-scroll">
-        {activeMailBody?.description}
-      </div>
+    <div className="main">
+      <MailTypes
+        mailTypes={mailTypes}
+        setActiveMailTypeIndex={setActiveMailTypeIndex}
+      />
+      <Mails mails={mails} setActiveMailBodyIndex={setActiveMailBodyIndex} />
+      <MailBody activeMailBody={activeMailBody} />
     </div>
   );
 }
