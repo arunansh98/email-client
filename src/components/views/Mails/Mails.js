@@ -1,5 +1,8 @@
 export default function Mails(props) {
-  const { mails, setActiveMailBodyIndex } = props;
+  const { mails, setActiveMailBodyIndex, activeMailTypeIndex, dispatch } =
+    props;
+  console.log({ mails });
+
   return (
     <div>
       {mails &&
@@ -17,7 +20,19 @@ export default function Mails(props) {
               className={mailsClass}
               key={index}
               onClick={() => {
-                mail.isRead = true;
+                dispatch({
+                  type: "setMail",
+                  payload: {
+                    value: {
+                      mailTypeIndex: activeMailTypeIndex,
+                      mailIndex: index,
+                      mail: {
+                        ...mail,
+                        isRead: true,
+                      },
+                    },
+                  },
+                });
                 setActiveMailBodyIndex(index);
               }}
             >
