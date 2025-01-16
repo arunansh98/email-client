@@ -3,9 +3,15 @@
 @tailwind utilities;
 
 .main {
-  @apply flex flex-row items-stretch h-[86vh] justify-between border-[2px] border-solid m-[3rem];
+  @apply flex flex-row items-stretch h-[86vh] justify-between border-[2px] border-solid m-[3rem] border-[grey];
 }
 
 .main > div {
   @apply flex flex-col items-center justify-start border-solid border-r-[1px] h-full w-full overflow-y-scroll;
+}
+
+@media (max-width: 750px) {
+  .main {
+    @apply flex-col;
+  }
 }
