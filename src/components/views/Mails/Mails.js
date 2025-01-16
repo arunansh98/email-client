@@ -33,8 +33,10 @@ export default function Mails(props) {
     });
   };
 
+  const mailsClassName = !mails || mails?.length === 0 ? "!justify-center" : "";
+
   return (
-    <div>
+    <div className={mailsClassName}>
       {mails &&
         mails?.length > 0 &&
         mails.map((mail, index) => {
