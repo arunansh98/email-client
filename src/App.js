@@ -14,8 +14,8 @@ export default function App() {
         return {
           ...action.payload.value,
         };
-      case "setStarredMail":
-        return setStarredMail(state, action);
+      case "setMailStarred":
+        return setMailStarred(state, action);
       case "setMailRead":
         return setMailRead(state, action);
       default:
@@ -23,9 +23,8 @@ export default function App() {
     }
   };
 
-  const setStarredMail = (state, action) => {
-    const { payload } = action;
-    const { mail } = payload.value;
+  const setMailStarred = (state, action) => {
+    const { mail } = action.payload.value;
     return {
       ...state,
       mailTypes: state.mailTypes.map((mailType) => {
@@ -41,10 +40,7 @@ export default function App() {
             ...mailType,
             mails: mailType.mails.map((item) => {
               if (item.id === mail.id) {
-                return {
-                  ...item,
-                  isStarred: mail.isStarred,
-                };
+                return mail;
               }
               return item;
             }),
@@ -55,8 +51,7 @@ export default function App() {
   };
 
   const setMailRead = (state, action) => {
-    const { payload } = action;
-    const { mail } = payload.value;
+    const { mail } = action.payload.value;
     return {
       ...state,
       mailTypes: state.mailTypes.map((mailType) => {
@@ -64,10 +59,7 @@ export default function App() {
           ...mailType,
           mails: mailType.mails.map((item) => {
             if (item.id === mail.id) {
-              return {
-                ...item,
-                isRead: mail.isRead,
-              };
+              return mail;
             }
             return item;
           }),

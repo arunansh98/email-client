@@ -21,7 +21,7 @@ export default function Mails(props) {
   const handleMailStarred = (mail, event) => {
     event.stopPropagation();
     dispatch({
-      type: "setStarredMail",
+      type: "setMailStarred",
       payload: {
         value: {
           mail: {
