@@ -97,6 +97,7 @@ export default function App() {
     <div className="main">
       <MailTypes
         mailTypes={mailTypes}
+        activeMailTypeIndex={activeMailTypeIndex}
         setActiveMailTypeIndex={setActiveMailTypeIndex}
       />
       <Mails
