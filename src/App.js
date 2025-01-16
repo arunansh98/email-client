@@ -14,31 +14,64 @@ export default function App() {
         return {
           ...action.payload.value,
         };
-      case "setMail":
-        return setMail(state, action);
+      case "setStarredMail":
+        return setStarredMail(state, action);
+      case "setMailRead":
+        return setMailRead(state, action);
       default:
         throw new Error("No action matched!");
     }
   };
 
-  const setMail = (state, action) => {
+  const setStarredMail = (state, action) => {
     const { payload } = action;
-    const { mailTypeIndex, mailIndex, mail } = payload.value;
+    const { mail } = payload.value;
     return {
       ...state,
-      mailTypes: state.mailTypes.map((mailType, index) => {
-        if (index === mailTypeIndex) {
+      mailTypes: state.mailTypes.map((mailType) => {
+        if (mailType?.id === "favourites") {
           return {
             ...mailType,
-            mails: mailType.mails.map((mailItem, mailItemIndex) => {
-              if (mailItemIndex === mailIndex) {
-                return mail;
+            mails: mail.isStarred
+              ? [mail, ...mailType?.mails]
+              : mailType?.mails?.filter((item) => item.id !== mail.id),
+          };
+        } else {
+          return {
+            ...mailType,
+            mails: mailType.mails.map((item) => {
+              if (item.id === mail.id) {
+                return {
+                  ...item,
+                  isStarred: mail.isStarred,
+                };
               }
-              return mailItem;
+              return item;
             }),
           };
         }
-        return mailType;
+      }),
+    };
+  };
+
+  const setMailRead = (state, action) => {
+    const { payload } = action;
+    const { mail } = payload.value;
+    return {
+      ...state,
+      mailTypes: state.mailTypes.map((mailType) => {
+        return {
+          ...mailType,
+          mails: mailType.mails.map((item) => {
+            if (item.id === mail.id) {
+              return {
+                ...item,
+                isRead: mail.isRead,
+              };
+            }
+            return item;
+          }),
+        };
       }),
     };
   };
@@ -49,7 +82,6 @@ export default function App() {
     axios
       .get(`${process.env.PUBLIC_URL}/assets/data/db.json`)
       .then((response) => {
-        console.log({ response });
         dispatch({
           type: "replace",
           payload: {
@@ -78,7 +110,6 @@ export default function App() {
       <Mails
         mails={mails}
         setActiveMailBodyIndex={setActiveMailBodyIndex}
-        activeMailTypeIndex={activeMailTypeIndex}
         dispatch={dispatch}
       />
       <MailBody activeMailBody={activeMailBody} />
