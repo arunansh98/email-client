@@ -2,166 +2,159 @@
   "mailTypes": [
     {
       "label": "Inbox",
+      "id": "inbox",
       "mails": [
         {
           "title": "Welcome to our service",
           "description": "Thank you for signing up. We hope you enjoy the experience.",
           "isRead": false,
-          "isStarred": false
+          "isStarred": false,
+          "id": "mail_inbox_1"
         },
         {
           "title": "Weekly Newsletter",
           "description": "Here are the top updates and insights for the week.",
           "isRead": false,
-          "isStarred": false
+          "isStarred": false,
+          "id": "mail_inbox_2"
         },
         {
           "title": "Account Update",
           "description": "Your account settings have been updated successfully.",
           "isRead": false,
-          "isStarred": false
+          "isStarred": false,
+          "id": "mail_inbox_3"
         },
         {
           "title": "Upcoming Event",
           "description": "Don't miss our upcoming webinar on the latest industry trends.",
           "isRead": false,
-          "isStarred": false
+          "isStarred": false,
+          "id": "mail_inbox_4"
         },
         {
           "title": "Survey Invitation",
           "description": "We value your feedback! Please take our short survey.",
           "isRead": false,
-          "isStarred": false
+          "isStarred": false,
+          "id": "mail_inbox_5"
         },
         {
           "title": "Password Change Notification",
           "description": "Your password was successfully changed.",
           "isRead": false,
-          "isStarred": false
+          "isStarred": false,
+          "id": "mail_inbox_6"
         },
         {
           "title": "Security Alert",
           "description": "We noticed a new login to your account.",
           "isRead": false,
-          "isStarred": false
+          "isStarred": false,
+          "id": "mail_inbox_7"
         },
         {
           "title": "Promotion Announcement",
           "description": "Check out our latest offers and promotions.",
           "isRead": false,
-          "isStarred": false
+          "isStarred": false,
+          "id": "mail_inbox_8"
         },
         {
           "title": "Maintenance Notification",
           "description": "Scheduled maintenance is planned for this weekend.",
           "isRead": false,
-          "isStarred": false
+          "isStarred": false,
+          "id": "mail_inbox_9"
         },
         {
           "title": "Service Agreement Update",
           "description": "We've updated our terms of service. Please review the changes.",
           "isRead": false,
-          "isStarred": false
-        },
-        {
-          "title": "Password Change Notification",
-          "description": "Your password was successfully changed.",
-          "isRead": false,
-          "isStarred": false
-        },
-        {
-          "title": "Security Alert",
-          "description": "We noticed a new login to your account.",
-          "isRead": false,
-          "isStarred": false
-        },
-        {
-          "title": "Promotion Announcement",
-          "description": "Check out our latest offers and promotions.",
-          "isRead": false,
-          "isStarred": false
-        },
-        {
-          "title": "Maintenance Notification",
-          "description": "Scheduled maintenance is planned for this weekend.",
-          "isRead": false,
-          "isStarred": false
-        },
-        {
-          "title": "Service Agreement Update",
-          "description": "We've updated our terms of service. Please review the changes.",
-          "isRead": false,
-          "isStarred": false
+          "isStarred": false,
+          "id": "mail_inbox_10"
         }
       ]
     },
     {
       "label": "Sent",
+      "id": "sent",
       "mails": [
         {
           "title": "Project Proposal",
           "description": "Please find attached the proposal document for review.",
           "isRead": false,
-          "isStarred": false
+          "isStarred": false,
+          "id": "mail_sent_1"
         },
         {
           "title": "Meeting Follow-up",
           "description": "Following up on the action items discussed in the meeting.",
           "isRead": false,
-          "isStarred": false
+          "isStarred": false,
+          "id": "mail_sent_2"
         },
         {
           "title": "Thank You Note",
           "description": "Thank you for taking the time to meet with us today.",
           "isRead": false,
-          "isStarred": false
+          "isStarred": false,
+          "id": "mail_sent_3"
         },
         {
           "title": "Budget Approval Request",
           "description": "Please review and approve the budget for the next quarter.",
           "isRead": false,
-          "isStarred": false
+          "isStarred": false,
+          "id": "mail_sent_4"
         },
         {
           "title": "Code Review",
           "description": "Please find the latest code changes for your review.",
           "isRead": false,
-          "isStarred": false
+          "isStarred": false,
+          "id": "mail_sent_5"
         },
         {
           "title": "Event Invitation",
           "description": "You're invited to our annual tech summit.",
           "isRead": false,
-          "isStarred": false
+          "isStarred": false,
+          "id": "mail_sent_6"
         },
         {
           "title": "Feedback Request",
           "description": "We'd love to hear your thoughts on our latest release.",
           "isRead": false,
-          "isStarred": false
+          "isStarred": false,
+          "id": "mail_sent_7"
         },
         {
           "title": "Report Submission",
           "description": "Please find the monthly report attached for your review.",
           "isRead": false,
-          "isStarred": false
+          "isStarred": false,
+          "id": "mail_sent_8"
         },
         {
           "title": "New Feature Announcement",
           "description": "We're excited to share our latest feature update with you.",
           "isRead": false,
-          "isStarred": false
+          "isStarred": false,
+          "id": "mail_sent_9"
         },
         {
           "title": "Meeting Reschedule",
           "description": "The client meeting has been rescheduled to next week.",
           "isRead": false,
-          "isStarred": false
+          "isStarred": false,
+          "id": "mail_sent_10"
         }
       ]
     },
     {
       "label": "Favourites",
+      "id": "favourites",
       "mails": []
     }
   ]
