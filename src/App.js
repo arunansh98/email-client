@@ -100,13 +100,13 @@ export default function App() {
         activeMailTypeIndex={activeMailTypeIndex}
         setActiveMailTypeIndex={setActiveMailTypeIndex}
       />
-      <hr className="border-[1px] border-solid border-[grey] mb-2" />
+      <hr className="border-[1px] border-solid border-[grey]" />
       <Mails
         mails={mails}
         setActiveMailBodyIndex={setActiveMailBodyIndex}
         dispatch={dispatch}
       />
-      <hr className="border-[1px] border-solid border-[grey] mb-2" />
+      <hr className="border-[1px] border-solid border-[grey]" />
       <MailBody activeMailBody={activeMailBody} />
     </div>
   );

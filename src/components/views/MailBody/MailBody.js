@@ -1,4 +1,10 @@
 export default function MailBody(props) {
   const { activeMailBody } = props;
-  return <div className="!justify-center">{activeMailBody?.description}</div>;
+  return (
+    <div>
+      <h1 id="mail-body" className="text-center m-auto p-[1rem]">
+        {activeMailBody?.description}
+      </h1>
+    </div>
+  );
 }

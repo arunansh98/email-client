@@ -14,4 +14,16 @@
   .main {
     @apply flex-col;
   }
+
+  .main > div:first-child {
+    @apply !h-[25rem];
+  }
+
+  .main > div > h1 {
+    @apply !text-[10px];
+  }
+
+  #mail-body {
+    @apply !text-[10px];
+  }
 }

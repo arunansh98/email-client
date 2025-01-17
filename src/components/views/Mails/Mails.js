@@ -47,7 +47,7 @@ export default function Mails(props) {
           if (!mail?.isRead) {
             mailsClass = mailsClass + " font-bold";
           } else {
-            mailsClass = mailsClass + " bg-[#f2f6fc]";
+            mailsClass = mailsClass + " bg-[#FCFDFF]";
           }
           return (
             <h1
